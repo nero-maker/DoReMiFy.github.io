@@ -55,12 +55,15 @@
       background-color: #f0f0f0;
       border: 2px solid black;
       width: 100%;
+      height: 250px;
       border-radius: 8px;
       padding: 10px;
       box-sizing: border-box;
-      max-height: 300px;
       overflow-y: auto;
       white-space: pre-wrap;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .center-button {
@@ -90,18 +93,26 @@
       text-align: center;
       font-size: 14px;
       color: #555;
+      padding-top: 20px;
     }
 
-    @media (min-width: 600px) {
+    @media (min-width: 700px) {
       .container {
         flex-direction: row;
         justify-content: center;
         align-items: flex-start;
+        gap: 20px;
+        max-width: none;
       }
 
       .box {
-        max-width: 300px;
+        width: 300px;
         height: 250px;
+      }
+
+      .center-button {
+        align-self: center;
+        width: 150px;
       }
     }
   </style>
@@ -118,8 +129,9 @@
       <form id="upload-form" enctype="multipart/form-data">
         <input type="file" name="file" accept=".mp3, .wav" required />
       </form>
-      <button class="center-button" id="convert-btn">Convert to Solfa</button>
     </div>
+
+    <button class="center-button" id="convert-btn">Convert to Solfa</button>
 
     <div class="box" id="output-box">
       <!-- Solfa output will appear here -->
