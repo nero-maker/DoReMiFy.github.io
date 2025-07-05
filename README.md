@@ -1,155 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DoReMiFy</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 40px;
-      background-color: white;
-      font-family: Arial, sans-serif;
-    }
+# DoReMiFy 🎶
 
-    h1 {
-      font-style: italic;
-      font-weight: bold;
-    }
+DoReMiFy is a web app that converts vocals into solfa notation.
 
-    .subtitle {
-      font-size: 20px;
-      margin-bottom: 30px;
-    }
+## Features
+✅ Upload vocals (WAV/MP3)  
+✅ Get solfa notation 
 
-    .upload-label {
-      font-weight: bold;
-      margin-bottom: 5px;
-      display: block;
-    }
 
-    .note {
-      font-size: 14px;
-      margin-bottom: 10px;
-    }
+## Live Demo
+👉 [Try DoReMiFy Here](https://doremify.github.io)
 
-    .container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
+## Usage
+1. Open the web app.
+2. Upload your vocals-only audio file.
+3. Click "Convert".
+4. View your solfa notation on the screen.
 
-    .box {
-      background-color: #f0f0f0;
-      border: 2px solid black;
-      width: 90%;
-      max-width: 300px;
-      height: 200px;
-      border-radius: 8px;
-      padding: 10px;
-      box-sizing: border-box;
-    }
 
-    #output-box {
-      overflow-y: auto;
-      white-space: pre-wrap;
-    }
-
-    .center-button {
-      margin-top: 10px;
-      background-color: black;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 10px;
-      border: none;
-      cursor: pointer;
-      height: 40px;
-    }
-
-    .center-button:hover {
-      background-color: #333;
-    }
-
-    @media (max-width: 600px) {
-      body {
-        padding: 20px;
-      }
-
-      .subtitle {
-        font-size: 16px;
-      }
-
-      .center-button {
-        width: 100%;
-      }
-
-      .box {
-        height: auto;
-      }
-    }
-  </style>
-</head>
-<body>
-
-  <h1><i>DoReMiFy</i></h1>
-  <p class="subtitle">DoReMiFy allows you to convert vocals into solfa notations!</p>
-
-  <label class="upload-label">Upload your song file (MP3 or WAV)</label>
-  <p class="note">*Only vocal-only songs are supported*</p>
-
-  <div class="container">
-    <div class="box" id="upload-box">
-      <form id="upload-form" enctype="multipart/form-data">
-        <input type="file" name="file" accept=".mp3, .wav" style="margin: 20px;" required>
-      </form>
-    </div>
-
-    <button class="center-button" id="convert-btn">Convert to solfa</button>
-
-    <div class="box" id="output-box">
-      <!-- This is the output area where scroll will appear if content is long -->
-    </div>
-  </div>
-
-  <h1>Contact</h1>
-  <p>ogheneroclark33@gmail.com</p>
-
-  <script>
-    document.getElementById("convert-btn").addEventListener("click", async () => {
-      const form = document.getElementById("upload-form");
-      const fileInput = form.querySelector('input[type="file"]');
-      const outputBox = document.getElementById("output-box");
-
-      if (!fileInput.files.length) {
-        outputBox.innerText = "Please select a file to convert.";
-        return;
-      }
-
-      const formData = new FormData();
-      formData.append("file", fileInput.files[0]);
-
-      outputBox.innerText = "Converting to solfa, please wait...";
-
-      try {
-        const response = await fetch("https://0aef37e1-91f4-4a9e-ac25-ca7e23c7d979-00-200fygumsql1i.riker.replit.dev/", {
-          method: "POST",
-          body: formData
-        });
-
-        if (!response.ok) {
-          throw new Error("Conversion failed. Please try again.");
-        }
-
-        const resultText = await response.text();
-        outputBox.innerText = resultText;
-
-      } catch (error) {
-        outputBox.innerText = error.message;
-      }
-    });
-  </script>
-</body>
-</html>
-
+> Built by [Oghenero Clark].
