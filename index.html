@@ -4,62 +4,65 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Doremify</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background-color: white;
-      color: black; 
-      font-family: Arial, sans-serif;
-      text-align: center;
-    }
-
-    header {
-      padding: 60px 20px 40px;
-    }
-
-    h1 {
-      font-size: 48px;
-      margin-bottom: 10px;
-    }
-
-    p {
-      font-size: 20px;
-      margin: 0;
-    }
-
-    @media (max-width: 600px) {}
-      h1 {
-        font-size: 36px;
-      }
-
-      p {
-        font-size: 16px;
-      }
-      
-  </style>
+  <link rel="icon" type="image/jpeg" href="doremifylogo2_circle.png">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <header>
-    <h1>Doremify</h1>
-    <p>Convert vocal-only audio to solfa notation</p>
-    <p>Upload your song and get solfa delivered to your email within 2 days!</p>
-   </header>
+<body class="bg-white text-black font-sans antialiased">
   
-  <div class="button-container">
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfnkDSqqb8Y9T5d-PIZWpuwU-OVIp0LY5g4FkaHbCAU8QduQA/viewform?usp=dialog" target="_blank" class="google-form-btn">
-      Upload Audio via Google Form
-    </a>
-  </div>
-  <h2>How it works</h2>
-  <p> -Click the google form link</p>
-  <p> -Submit your song via the google form </p>
-  <p> -Get solfa notation sent to your email within 2 days </p>
+  <header class="bg-gradient-to-r from-teal-400 via-orange-400 to-yellow-400 text-white py-20 px-6 text-center">
+    <h1 class="text-5xl md:text-6xl font-extrabold drop-shadow-lg">Doremify</h1>
+    <p class="mt-4 text-xl md:text-2xl font-light">Convert vocal-only audio to solfa notation</p>
+    <p class="mt-2 text-lg">Upload your song and get solfa delivered to your email within <span class="font-semibold">2 days</span>!</p>
+    
+    <div class="mt-8">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfnkDSqqb8Y9T5d-PIZWpuwU-OVIp0LY5g4FkaHbCAU8QduQA/viewform?usp=dialog" 
+         target="_blank"
+         class="inline-block px-8 py-4 bg-black text-white font-semibold rounded-lg shadow-lg hover:bg-teal-600 transition duration-300">
+        🎵 Upload Audio via Google Form
+      </a>
+    </div>
+  </header>
 
-  <h3> Contact/FAQ Section </h3>
-  <p> "How long does it take for it to be delivered?"- Less than 2 days</p>
-  <p> "Can I upload any song?"- No, just vocal-only audio for now</p>
-  <p> "How will I receive it"- By email</p>
- 
+  <section class="py-16 px-6 bg-gray-50">
+    <h2 class="text-3xl font-bold text-center mb-12">How it Works</h2>
+    <div class="grid gap-8 md:grid-cols-3 max-w-6xl mx-auto">
+      <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold mb-3 text-teal-600">1. Submit</h3>
+        <p>Click the Google Form link and upload your vocal-only audio file.</p>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold mb-3 text-orange-500">2. Process</h3>
+        <p>We process your song with our unique solfa-conversion system.</p>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold mb-3 text-red-400">3. Deliver</h3>
+        <p>Your solfa notation is delivered straight to your email in less than 2 days.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 px-6 bg-gradient-to-r from-yellow-100 via-teal-50 to-orange-100">
+    <h2 class="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
+    <div class="max-w-3xl mx-auto space-y-6">
+      <div class="bg-white p-6 rounded-lg shadow">
+        <h3 class="font-semibold text-lg">⏱ How long does it take for delivery?</h3>
+        <p class="text-gray-600">We’ll send your solfa notation within <span class="font-semibold text-teal-600">2 days</span>.</p>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow">
+        <h3 class="font-semibold text-lg">🎶 Can I upload any song?</h3>
+        <p class="text-gray-600">Currently, we only accept <span class="font-semibold text-red-500">vocal-only audio</span>.</p>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow">
+        <h3 class="font-semibold text-lg">📧 How will I receive my solfa?</h3>
+        <p class="text-gray-600">We’ll email it directly to the address you provide.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-black text-white py-8 text-center">
+    <p class="text-sm">&copy; 2025 Doremify. All rights reserved.</p>
+  </footer>
+
 </body>
 </html>
